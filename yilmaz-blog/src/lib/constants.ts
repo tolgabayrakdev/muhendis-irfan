@@ -10,7 +10,6 @@ export type AuthorInfo = {
   headline: string;
   username?: string;
   location?: string;
-  pronouns?: string;
 }
 
 export type Seo = z.infer<typeof seoSchemaWithoutImage> & {
@@ -24,22 +23,21 @@ type DefaultConfigurationType = {
 }
 
 export const DEFAULT_CONFIGURATION: DefaultConfigurationType = {
-  baseUrl: astroConfig.site || 'https://getcvfolio.com',
+  baseUrl: astroConfig.site || 'https://muhendisirfan.com',
   author: {
     avatar,
-    name: 'Javier Diaz Chamorro',
-    headline: 'Engineering and Design',
-    username: 'coderdiaz',
-    location: 'Mexico City',
-    pronouns: 'He/Him',
+    name: 'İrfan YILMAZ',
+    headline: 'Yüksek İnşaat Mühendisi',
+    username: 'muhendisirfan',
+    location: 'Türkiye'
   },
   seo: {
-    title: 'CV Folio — An Astro template inspired on Read.cv',
-    description: 'Clean and aesthetic portfolio website for developers and designers',
+    title: 'Irfan YILMAZ — Insaat Muhendisi',
+    description: 'Merhaba, ben İrfan Yılmaz. Kişisel bloguma hosgeldiniz.',
     type: 'website',
     image: MetaDefaultImage,
     twitter: {
-      creator: '@cvfolio'
+      creator: '@muhendisirfan'
     },
     robots: 'noindex, nofollow',
   }
