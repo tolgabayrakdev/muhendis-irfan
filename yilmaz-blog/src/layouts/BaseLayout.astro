@@ -1,0 +1,29 @@
+---
+import '@/styles/global.css';
+import '@/assets/fonts/inter.css';
+import { type Seo } from '@/lib/constants';
+import BannerFloat from '@/components/BannerFloat.astro';
+import Header from '@/components/partials/Header.astro';
+import Footer from '@/components/partials/Footer.astro';
+import Head from '@/components/partials/Head.astro';
+import SwitchTheme from '@/components/SwitchTheme.tsx';
+
+interface Props {
+  seo?: Seo
+}
+
+const { seo } = Astro.props;
+---
+
+<html lang="en">
+  <Head seo={seo} />
+  <body class="bg-background text-foreground pb-12">
+    <Header />
+    <main class="pt-24">
+      <slot />
+    </main>
+    <Footer />
+    <SwitchTheme client:only="react" />
+    <BannerFloat />
+  </body>
+</html>
