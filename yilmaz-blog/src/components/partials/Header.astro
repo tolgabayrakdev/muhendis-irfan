@@ -9,7 +9,7 @@ const isWritingPage = pathname.startsWith('/writing');
 ---
 
 <Container as='header' class="w-full max-w-full flex justify-center items-center">
-  <div class="w-max fixed top-0 mt-5 bg-muted-foreground/40 backdrop-blur-md border border-border rounded-full p-1">
+  <div id="header-nav" class="w-max fixed top-0 mt-5 bg-muted-foreground/40 backdrop-blur-md border border-border rounded-full p-1 transition-transform duration-300">
     <nav class="flex items-center">
       <ul class="flex items-center gap-1">
         <li>
@@ -30,3 +30,21 @@ const isWritingPage = pathname.startsWith('/writing');
     </nav>
   </div>
 </Container>
+
+<script>
+  let lastScrollY = window.scrollY;
+  const header = document.getElementById('header-nav');
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    const isScrollingUp = currentScrollY < lastScrollY;
+    
+    if (isScrollingUp) {
+      header?.classList.remove('-translate-y-full');
+    } else {
+      header?.classList.add('-translate-y-full');
+    }
+    
+    lastScrollY = currentScrollY;
+  });
+</script>
