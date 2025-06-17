@@ -27,8 +27,10 @@ const seoImage = generateAbsoluteUrl(image.src);
     <meta name="keywords" content={seo?.keywords || defaultSeo.keywords} />
   </slot>
   <meta name="generator" content={Astro.generator} />
-  <meta name="robots" content={seo?.robots || defaultSeo.robots} />
+  <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="z0W1qpXM1VzBls_FHVrNq9e-UlYx9Yzdq6VOVrh3IZw" />
+  <meta name="language" content="tr" />
+  <meta name="revisit-after" content="7 days" />
   <!-- OpenGraph Meta -->
   <meta property="og:type" content={seo?.type ?? 'website'} />
   <meta property="og:site_name" content={defaultSeo.title} />
@@ -37,6 +39,8 @@ const seoImage = generateAbsoluteUrl(image.src);
   <meta property="og:image" content={seoImage} />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="720" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta property="og:url" content={seo?.canonicalUrl || Astro.url.href} />
   <!-- Twitter Meta -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:creator" content={seo?.twitter?.creator || defaultSeo.twitter?.creator} />

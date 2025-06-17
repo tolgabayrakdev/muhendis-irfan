@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Sitemap: https://yilmaz-blog.com/sitemap-index.xml
+
+# Disallow admin and private routes
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/ 

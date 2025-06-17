@@ -18,7 +18,7 @@ const posts = (await getCollection('posts')).sort((a, b) => {
   </Container>
   <Container as='section' class='py-6'>
     <div class="flex flex-col gap-6">
-      <span class="text-headings">Latest posts</span>
+      <span class="text-headings">En son yazılar</span>
       <ul class="flex flex-col gap-3">
         {posts.map((post) => <PostPreview entry={post} />)}
       </ul>
