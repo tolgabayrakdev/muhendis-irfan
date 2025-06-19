@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://yilmaz-blog.com/sitemap-index.xml
+Sitemap: https://muhendisirfan.com/sitemap-index.xml
 
 # Disallow admin and private routes
 Disallow: /admin/
